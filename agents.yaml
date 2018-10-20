@@ -642,6 +642,7 @@ data:
       k8s_cluster_name "#{ENV["CLUSTER_NAME"]}"
       k8s_cluster_location "#{ENV["CLUSTER_LOCATION"]}"
       adjust_invalid_timestamps false
+      autoformat_stackdriver_trace false
     </match>
 
     # Attach local_resource_id for 'k8s_node' monitored resource.
@@ -684,6 +685,7 @@ data:
       k8s_cluster_name "#{ENV["CLUSTER_NAME"]}"
       k8s_cluster_location "#{ENV["CLUSTER_LOCATION"]}"
       adjust_invalid_timestamps false
+      autoformat_stackdriver_trace false
     </match>
 kind: ConfigMap
 metadata:
