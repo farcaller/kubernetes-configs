@@ -586,12 +586,12 @@ data:
     </filter>
 
     <filter **>
-      @type record_modifier
+      @type record_transformer
       enable_ruby true
       <record>
         _dummy_ ${if record.has_key?('source_file'); record['logging.googleapis.com/sourceLocation'] = {'file' => record['source_file'], 'line' => record['source_line']}; end; nil}
       </record>
-      remove_keys _dummy_, source_file, source_line
+      # remove_keys _dummy_, source_file, source_line
     </filter>
 
     # This section is exclusive for k8s_container logs. Those come with
