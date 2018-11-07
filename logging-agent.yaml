@@ -465,13 +465,15 @@ data:
       </metric>
     </filter>
 
+    # This filter If 'source_file' and 'source_line' fileds exist, nest them in a top-level
+    # field for sourceLocation.
     <filter **>
       @type record_transformer
       enable_ruby true
       <record>
-        _dummy_ ${if record.has_key?('source_file'); record['logging.googleapis.com/sourceLocation'] = {'file' => record['source_file'], 'line' => record['source_line']}; end; nil}
+        "logging.googleapis.com/sourceLocation" ${if record.has_key?('source_file'); {'file' => record['source_file'], 'line' => record['source_line']}; else; nil; end}
       </record>
-      # remove_keys _dummy_, source_file, source_line
+      remove_keys source_file, source_line
     </filter>
 
     # This section is exclusive for k8s_container logs. Those come with
