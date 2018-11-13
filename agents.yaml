@@ -156,7 +156,7 @@ spec:
             configMapKeyRef:
               name: cluster-config
               key: cluster_location
-        image: gcr.io/stackdriver-agents/stackdriver-logging-agent:0.6-1.6.0-1
+        image: us.gcr.io/stackdriver-kubernetes-1337/stackdriver-logging-agent:generated-configs--jschulz-glog-fluent-plugin-jschulz-sourcelocation-package-master
         imagePullPolicy: IfNotPresent
         livenessProbe:
           exec:
