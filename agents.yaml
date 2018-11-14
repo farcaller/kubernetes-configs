@@ -741,7 +741,7 @@ spec:
         - -o InstanceId="$(NODE_NAME)"
         - -o InstanceZone="$(CLUSTER_LOCATION)"
         - -o MetadataReporterPurgeDeleted=true
-        image: gcr.io/stackdriver-agents/stackdriver-metadata-agent:0.2-0.0.21-1
+        image: us.gcr.io/stackdriver-kubernetes-1337/stackdriver-metadata-agent:generated-configs-master-metadata-agent-davidbtucker-watch-reconnect-staleness
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -839,7 +839,7 @@ spec:
         - -o InstanceId="$(NODE_NAME)"
         - -o InstanceZone="$(CLUSTER_LOCATION)"
         - -o MetadataReporterPurgeDeleted=true
-        image: gcr.io/stackdriver-agents/stackdriver-metadata-agent:0.2-0.0.21-1
+        image: us.gcr.io/stackdriver-kubernetes-1337/stackdriver-metadata-agent:generated-configs-master-metadata-agent-davidbtucker-watch-reconnect-staleness
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
